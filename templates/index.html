@@ -1,0 +1,38 @@
+<form action="/calculate" method="post">
+    Stock Symbol: <input type="text" name="symbol"><br>
+    Strike Price: <input type="text" name="strike_price"><br>
+    Maturity (years): <input type="text" name="maturity"><br>
+    Volatility (%): <input type="text" name="volatility"><br>
+    Risk-free Rate (%): <input type="text" name="risk_free_rate"><br>
+    Option Type: 
+    <select name="option_type">
+        <option value="call">Call</option>
+        <option value="put">Put</option>
+    </select><br>
+    Model:
+    <select name="model_type">
+        <option value="black_scholes">Black-Scholes</option>
+        <option value="binomial_tree">Binomial Tree</option>
+        <option value="monte_carlo">Monte Carlo</option>
+        <option value="bjerksund_stensland">Bjerksund-Stensland</option>
+    </select><br>
+    Steps (for Binomial Tree): <input type="text" name="steps" value="100"><br>
+    Simulations (for Monte Carlo): <input type="text" name="simulations" value="10000"><br>
+    <input type="submit" value="Calculate">
+</form>
+
+<!-- New form for visualization -->
+<form action="/visualize" method="post">
+    <input type="hidden" name="symbol" value="{{ symbol }}">
+    <input type="hidden" name="strike_price" value="{{ strike_price }}">
+    <input type="hidden" name="maturity" value="{{ maturity }}">
+    <input type="hidden" name="volatility" value="{{ volatility }}">
+    <input type="hidden" name="risk_free_rate" value="{{ risk_free_rate }}">
+    <input type="hidden" name="option_type" value="{{ option_type }}">
+    <input type="hidden" name="model_type" value="{{ model_type }}">
+    <input type="hidden" name="steps" value="{{ steps }}">
+    <input type="hidden" name="simulations" value="{{ simulations }}">
+    <input type="submit" value="Visualize">
+</form>
+
+

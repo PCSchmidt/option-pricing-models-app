@@ -1,0 +1,28 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environment
+/venv
+
+# Flask Environmental Variables
+.env  
+
+# Ignore logs
+*.log 
+
+# VS Code settings
+.vscode/
+
+# GitHub large files
+*.dll 
+*.zip
+*.tar.gz 
+
+#Python related files
+*.egg 
+*.egg-info/
+dist/
+build/
+eggs/
