@@ -21,6 +21,7 @@ def visualize():
         symbol = request.form['symbol']
         strike_price = float(request.form['strike_price'])
         option_type = request.form['option_type']
+        maturity = float(request.form['maturity'])
         volatility = float(request.form['volatility']) / 100
         risk_free_rate = float(request.form['risk_free_rate']) / 100
         model_type = request.form['model_type']
@@ -32,8 +33,17 @@ def visualize():
 
         x_vals = np.linspace(0.01, 1.0, 50)
         option_prices = [
-            calculate_price(model_type, stock_price, strike_price, 1, risk_free_rate, sigma,
-                             option_type, steps, simulations)
+            calculate_price(
+                model_type,
+                stock_price,
+                strike_price,
+                maturity,
+                risk_free_rate,
+                sigma,
+                option_type,
+                steps,
+                simulations,
+            )
             for sigma in x_vals
         ]
 
