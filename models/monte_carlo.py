@@ -1,3 +1,5 @@
+import numpy as np
+
 def monte_carlo(S, K, T, r, sigma, simulations, option_type='call'):
     """
     Monte Carlo simulation to calculate option prices
@@ -21,3 +23,4 @@ def monte_carlo(S, K, T, r, sigma, simulations, option_type='call'):
 
     # Discounted average of the simulated payoffs
     return np.exp(-r * T) * np.mean(price_paths)
+

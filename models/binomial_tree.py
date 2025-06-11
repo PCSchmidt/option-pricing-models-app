@@ -1,3 +1,5 @@
+import numpy as np
+
 def binomial_tree(S, K, T, r, sigma, steps, option_type='call'):
     """
     Binomial tree model to calculate option prices
@@ -32,3 +34,4 @@ def binomial_tree(S, K, T, r, sigma, steps, option_type='call'):
             option_values[j] = (p * option_values[j] + (1 - p) * option_values[j + 1]) * np.exp(-r * dt)
 
     return option_values[0]
+
